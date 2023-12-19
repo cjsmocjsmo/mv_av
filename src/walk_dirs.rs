@@ -4,7 +4,7 @@ use walkdir::WalkDir;
 pub fn walk_dir(apath: String) -> Vec<String> {
     let mut keeper_vec = Vec::new();
     let mut idx = 0;
-    let ext_list = ["mp4", "MP4", "mov", "MOV", "avi", "AVI", "mkv", "MKV", "mpg", "MPG"];
+    let ext_list = ["mp4", "MP4", "mov", "MOV", "avi", "AVI", "mkv", "MKV", "mpg", "MPG", "mpeg", "MPEG"];
 
     for e in WalkDir::new(apath)
         .follow_links(true)
