@@ -9,7 +9,7 @@ fn main() {
     let vp5 = "/home/teresa/Pictures/PicISO".to_string();
     let vp_list = vec![vp1, vp2, vp3, vp4, vp5];
     for vid_path in vp_list {
-        let vid_out_path = "/home/teresa/Videos/".to_string();
+        let vid_out_path = "/home/teresa/Videos/AV/".to_string();
         let vid_list = walk_dirs::walk_dir(vid_path);
         for vid in vid_list {
             let ext_split = vid.split(".").collect::<Vec<&str>>();
