@@ -1,4 +1,3 @@
-// use md5::compute;
 use uuid::Uuid;
 pub mod walk_dirs;
 
@@ -12,19 +11,15 @@ fn main() {
         let filename = fname.last().unwrap().to_string();
         let ext_split = filename.split(".").collect::<Vec<&str>>();
         let ext = ext_split.last().unwrap().to_string();
-        // let new_file_path = format!("{}{}", vid_out_path, filename);
-        // println!("{} ->\n {}", vid, new_file_path);
         
-        
-    
-
-
-
-        // let digest = compute(&vid);
-        // let new_out_path = format!("{}{:?}.{}", vid_out_path, digest, ext);
         let new_out_path2 = format!("{}{:?}.{}", vid_out_path, uuid, ext);
         println!("{} ->\n {}", vid, new_out_path2);
-        // std::fs::copy(vid, new_out_path).unwrap();
+        
+        // Create all needed directories
+        std::fs::create_dir_all(&new_out_path2).unwrap();
+        
+        // Move vid to new_out_path2
+        std::fs::rename(&vid, &new_out_path2).unwrap();
     }
     print!("{:?}", "Done!")
 }
