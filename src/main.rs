@@ -15,8 +15,6 @@ fn main() {
         let new_out_path2 = format!("{}{:?}.{}", vid_out_path, uuid, ext);
         println!("{} ->\n {}", vid, new_out_path2);
         
-        // Create all needed directories
-        std::fs::create_dir_all(&new_out_path2).unwrap();
         
         // Move vid to new_out_path2
         std::fs::rename(&vid, &new_out_path2).unwrap();
