@@ -6,7 +6,6 @@ pub fn walk_dir(apath: String) -> Vec<String> {
     let mut idx = 0;
     let ext_list = [
         "mp4", "MP4", "mov", "MOV", "avi", "AVI", "mkv", "MKV", "mpg", "MPG", "mpeg", "MPEG",
-        "jpg", "JPG", "jpeg", "JPEG", "png", "PNG", "gif", "GIF", "bmp", "BMP", "tiff", "TIFF",
     ];
 
     for e in WalkDir::new(apath)
