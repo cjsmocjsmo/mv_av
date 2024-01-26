@@ -8,16 +8,18 @@ fn main() {
     for vid in vid_list {
         let fname = vid.split("/").collect::<Vec<&str>>();
         let filename = fname.last().unwrap().to_string();
-        let new_file_path = format!("{}{}", vid_out_path, filename);
-        println!("{} ->\n {}", vid, new_file_path);
+        let ext_split = filename.split(".").collect::<Vec<&str>>();
+        let ext = ext_split.last().unwrap().to_string();
+        // let new_file_path = format!("{}{}", vid_out_path, filename);
+        // println!("{} ->\n {}", vid, new_file_path);
         
     
 
 
 
-        // let digest = compute(&vid);
-        // let new_out_path = format!("{}{:?}.{}", vid_out_path, digest, ext);
-        // println!("{} -> {}", vid, new_out_path);
+        let digest = compute(&vid);
+        let new_out_path = format!("{}{:?}.{}", vid_out_path, digest, ext);
+        println!("{} ->\n {}", vid, new_out_path);
         // std::fs::copy(vid, new_out_path).unwrap();
     }
     print!("{:?}", "Done!")
