@@ -13,8 +13,8 @@ fn main() {
             continue;
         } else {
             ext_list.push(ext.to_string());
-        }
-    print!("{:?}", ext_list)
+        };
+    
 
 
 
@@ -23,4 +23,5 @@ fn main() {
         // println!("{} -> {}", vid, new_out_path);
         // std::fs::copy(vid, new_out_path).unwrap();
     }
+    print!("{:?}", ext_list)
 }
