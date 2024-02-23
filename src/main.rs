@@ -2,8 +2,8 @@ use uuid::Uuid;
 pub mod walk_dirs;
 
 fn main() {
-    let vid_path = "/media/pi/taz/hpics_copy".to_string();
-    let vid_out_path = "/media/pi/taz/AV/".to_string();
+    let vid_path = "/media/pipi/taz/PicCD1".to_string();
+    let vid_out_path = "/media/pipi/taz/AV/".to_string();
     let vid_list = walk_dirs::walk_dir(vid_path.clone());
     for vid in vid_list {
         let uuid = Uuid::new_v4();
